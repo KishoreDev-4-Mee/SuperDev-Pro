@@ -1,0 +1,39 @@
+[
+	{
+		"id": 1,
+		"priority": 1,
+		"action": {
+			"type": "modifyHeaders",
+			"requestHeaders": [
+				{"header": "referer", "operation": "remove"},
+				{"header": "referer-policy", "operation": "remove"},
+				{"header": "sec-fetch-dest", "operation": "set", "value": "document"},
+				{"header": "sec-fetch-mode", "operation": "set", "value": "navigate"},
+				{"header": "sec-fetch-site", "operation": "set", "value": "none"},
+				{"header": "sec-fetch-user", "operation": "set", "value": "?1"},
+				{"header": "upgrade-insecure-requests", "operation": "set", "value": "1"}
+			],
+			"responseHeaders": [
+				{"header": "access-control-allow-credentials", "operation": "remove"},
+				{"header": "access-control-allow-headers", "operation": "remove"},
+				{"header": "access-control-allow-methods", "operation": "remove"},
+				{"header": "access-control-allow-origin", "operation": "set", "value": "*"},
+				{"header": "access-control-expose-headers", "operation": "remove"},
+				{"header": "content-security-policy", "operation": "remove"},
+				{"header": "content-security-policy-report-only", "operation": "remove"},
+				{"header": "cross-origin-embedder-policy", "operation": "remove"},
+				{"header": "cross-origin-opener-policy", "operation": "remove"},
+				{"header": "cross-origin-resource-policy", "operation": "remove"},
+				{"header": "permissions-policy", "operation": "remove"},
+				{"header": "strict-transport-security", "operation": "remove"},
+				{"header": "x-content-type-options", "operation": "remove"},
+				{"header": "x-frame-options", "operation": "remove"}
+			]
+		},
+		"condition": {
+			"initiatorDomains": ["cdpn.io"],
+			"resourceTypes": ["image", "font", "media"],
+			"urlFilter": "*"
+		}
+	}
+]
